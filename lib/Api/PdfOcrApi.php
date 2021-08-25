@@ -866,7 +866,7 @@ class PdfOcrApi
         // form params
         if ($image_file !== null) {
             $multipart = true;
-            $formParams['imageFile'] = \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($image_file), 'rb');
+            $formParams['imageFile'] = GuzzleHttp\Psr7\Utils::tryFopen(ObjectSerializer::toFormValue($image_file), 'rb'); // \GuzzleHttp\Psr7\try_fopen(ObjectSerializer::toFormValue($image_file), 'rb');
         }
         // body params
         $_tempBody = null;
